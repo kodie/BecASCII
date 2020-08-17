@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>BecASCII &lt;3</title>
+    <style type="text/css">
+      * {
+        font-size: 7px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .loading {
+        font-size: 32px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <script type="text/javascript" src="https://rawcdn.githack.com/mir3z/aalib.js/f5db370b2a512660d273b42267b06a2878671fc3/dist/aalib.js"></script>
+    <script type="text/javascript" src="/images.js"></script>
+    <script type="text/javascript">
+      function getFontCharPx(innerHTML, fontFamily, fontSize, element) {
+        if (!(element instanceof Element)) {
+          element = document.createElement(element || 'pre')
+        }
+
+        if (!innerHTML) innerHTML = 'X'
+        if (fontFamily) element.style.fontFamily = fontFamily
+        if (fontSize) element.style.fontSize = fontSize
+
+        element.style.visibility = 'hidden'
+        element.style.position = 'absolute'
+        element.style.left = 0
+        element.style.top = 0
+        element.style.padding = 0
+        element.style.margin = 0
+        element.innerHTML = innerHTML
+
+        document.body.appendChild(element)
+
+        var rect = element.getBoundingClientRect()
+        var width = rect.width
+        var height = rect.height
+
+        document.body.removeChild(element)
+
+        return { width, height }
+      }
+
+      function generateBecASCII() {
+        var charSize = getFontCharPx()
+        var index = Math.floor(Math.random() * images.length)
+        var image = images[index]
+        var ratio = Math.min(window.innerWidth / image.width, window.innerHeight / image.height)
+        var width = Math.round((image.width * ratio) / charSize.width)
+        var height = Math.round((image.height * ratio) / charSize.height)
+
+        console.log({ charSize, width, height, ratio, index, image })
+
+        aalib.read.image.fromURL(image.url)
+          .map(aalib.filter.contrast(0.7))
+          .map(aalib.aa({
+            width,
+            height,
+            colored: true
+          }))
+          .map(aalib.filter.brightness(10))
+          .map(aalib.render.html({
+            charset: aalib.charset.SIMPLE_CHARSET,
+            el: document.querySelector('#main')
+          }))
+          .subscribe()
+      }
+
+      window.onload = function (e) {
+        generateBecASCII()
+      }
+    </script>
+  </head>
+  <body>
+    <pre id="main">
+      <span class="loading">Loading BecASCII &lt;3...</span>
+    </pre>
+  </body>
+</html>
