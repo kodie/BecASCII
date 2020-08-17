@@ -10,7 +10,7 @@ Visit [https://kodie.github.io/BecASCII](https://kodie.github.io/BecASCII)
 
 ## What It Does
 
-When the window first loads, it first finds out the width and height that the characters will be based on the font face and size used (using the `getFontCharPx` function). It then chooses a random object from the `images` array located in [images.js](images.js) that has an image URL as well as it's original width and height. After that it does some math to figure out what aspect ratio we should stick to based on the image and window size and calculates how many characters wide and high the ASCII art should be. Finally, using the [aalib.js](https://github.com/mir3z/aalib.js) libary, it generates ASCII art of the image and displays it on the page.
+When the window first loads, it first finds out the width and height that the characters will be based on the font face and size used (using the `getFontCharPx` function). It then chooses a random object from the `images` array located in [images.js](images.js) that has an image URL as well as it's original width and height. After that it does some math to figure out what aspect ratio we should stick to based on the image and window size and calculates how many characters wide and high the ASCII art should be. Finally, using the [aalib.js](https://github.com/mir3z/aalib.js) library, it generates ASCII art of the image and displays it on the page.
 
 TLDR: It generates random images of my wife (Beca) as ASCII art.
 
