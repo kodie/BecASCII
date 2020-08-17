@@ -6,7 +6,7 @@ Te amo mi vida :heart:
 
 ## See It In Action
 
-Visit [https://kodie.github.io/becascii](https://kodie.github.io/becascii)
+Visit [https://kodie.github.io/BecASCII](https://kodie.github.io/BecASCII)
 
 ## What It Does
 
