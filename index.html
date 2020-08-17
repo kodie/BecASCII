@@ -56,7 +56,7 @@
         var width = Math.round((image.width * ratio) / charSize.width)
         var height = Math.round((image.height * ratio) / charSize.height)
 
-        console.log({ charSize, width, height, ratio, index, image })
+        console.log({ charSize, width, height, ratio, index, image, windowWidth: window.innerWidth, windowHeight: window.innerHeight })
 
         aalib.read.image.fromURL(image.url)
           .map(aalib.filter.contrast(0.7))
