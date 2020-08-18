@@ -52,13 +52,16 @@
 
       function generateBecASCII() {
         var charSize = getFontCharPx()
-        var index = Math.floor(Math.random() * images.length)
+        var imageCount = images.length
+        var index = Math.floor(Math.random() * imageCount)
         var image = images[index]
-        var ratio = Math.min(window.innerWidth / image.width, window.innerHeight / image.height)
+        var windowWidth = window.innerWidth
+        var windowHeight = window.innerHeight
+        var ratio = Math.min(windowWidth / image.width, windowHeight / image.height)
         var width = Math.round((image.width * ratio) / charSize.width)
         var height = Math.round((image.height * ratio) / charSize.height)
 
-        console.log({ charSize, width, height, ratio, index, image, windowWidth: window.innerWidth, windowHeight: window.innerHeight })
+        console.log({ charSize, width, height, ratio, index, image, imageCount, windowWidth, windowHeight })
 
         aalib.read.image.fromURL(image.url)
           .map(aalib.filter.contrast(0.7))
