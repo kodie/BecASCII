@@ -15,11 +15,6 @@ var images = [
     "height": 692
   },
   {
-    "url": "https://uc45e040d5e3edc9022eb1e29a9a.dl.dropboxusercontent.com/cd/0/inline/A9ooVMdA1ROYe3GjlQ40iU1o9MEqGunU2fWolimerOjsp7EgmaCfsVRIg-deBsBAV9niMrGL80N23hE26ayDtRnpp2jCR8Mjr7CKPMoUWLIcJw/file#",
-    "width": 300,
-    "height": 400
-  },
-  {
     "url": "https://uc9a2ccbd093c56289554bd340c6.dl.dropboxusercontent.com/cd/0/inline/A9oeyxXF1i0pi1JHIqUtZMmPYs8DYeHnGOyt9Dr0NRRSifm8eKAEDv2iVLUk5k9n0A-JsO0fO_LPXeWUi4QEvuAVF6psE9-x1sqheFxzMRoUHxdxuY4s5eYloLzgw7vTG4g/file#",
     "width": 519,
     "height": 692
