@@ -14,7 +14,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
       }
-      .loading {
+      .loading, .error {
         font-size: 32px;
       }
     </style>
@@ -69,13 +69,24 @@
           .map(aalib.filter.brightness(10))
           .map(aalib.render.html({
             charset: aalib.charset.SIMPLE_CHARSET,
-            el: document.querySelector('#main')
+            el: document.getElementById('main')
           }))
           .subscribe()
       }
 
       window.onload = function (e) {
         generateBecASCII()
+      }
+
+      window.onerror = function (err) {
+        var main = document.getElementById('main')
+        var span = document.createElement('span')
+
+        span.className = 'error'
+        span.innerHTML = 'Uh oh, an error occured :('
+        main.innerHTML = ''
+
+        main.appendChild(span)
       }
     </script>
   </head>
