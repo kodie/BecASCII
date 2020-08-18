@@ -4,6 +4,7 @@
     <title>BecASCII &lt;3</title>
     <style type="text/css">
       * {
+        font-family: monospace;
         font-size: 7px;
         margin: 0;
         padding: 0;
@@ -69,7 +70,9 @@
           .map(aalib.filter.brightness(10))
           .map(aalib.render.html({
             charset: aalib.charset.SIMPLE_CHARSET,
-            el: document.getElementById('main')
+            el: document.getElementById('main'),
+            fontFamily: 'monospace',
+            fontSize: '7px'
           }))
           .subscribe()
       }
